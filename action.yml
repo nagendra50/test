@@ -1,0 +1,16 @@
+name: my first workflow #name of WF
+
+on: push # for trigger, can add multiple events [ , ]
+
+jobs: #can define multiple jobs
+    first_job: # provide uniqe name for each job
+        runs-on: ubuntu-latest #define where job runs
+        steps: #can write multiple steps
+        - name: welcome message #optional for what step does
+          run: echo "my first github actions job" # run command to execute on ubuntu VM
+
+        - name: list files #2nd step
+          run: ls
+
+        - name: Read file #3rd step...
+          run: cat README.md
